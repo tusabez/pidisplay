@@ -25,7 +25,7 @@ class NowPlaying(FullScreenPlugin, metaclass=Singleton):
         FullScreenPlugin.__init__(self, helper, canvas, os.path.abspath(os.path.dirname(__file__)), app_plugin_config)
 
         self.scope = "user-read-playback-state,user-modify-playback-state"
-        self.redirect_uri = "http://localhost:8888/callback"
+        self.redirect_uri = "http://127.0.0.1:8080/callback"
 
         self.margin_x = 20
         self.text_margin_x = 5
