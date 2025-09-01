@@ -426,7 +426,8 @@ class Item:
         self.shuffle_state = sp_object["shuffle_state"]
 
     def parse(self, sp_object, sp, screen_width, screen_height, album_height, plugin_config):
-        self.context_type = sp_object["context"]["type"]
+        context = sp_object.get("context") or {}
+        self.context_type = context.get("type", "")
 
         # "artist", "playlist", "album", "show"
         if self.context_type == "artist":
